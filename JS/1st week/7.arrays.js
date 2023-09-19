@@ -4,6 +4,9 @@ console.log(a[2]); // undefined */
 
 let letters = new Array("a", "b", "c", "d", "e");
 let letters2 = ["a", "b", "c", "d", "e"];
+/* console.log(letters2.with(2,8)); // ES2023
+console.log(letters2); */
+
 /* console.log(letters); // ["a", "b", "c", "d", "e"] 
 console.log(letters2); // ["a", "b", "c", "d", "e"]
 
@@ -35,5 +38,4 @@ for (let letter of str) {
   } else {
     console.log(letter + " is a consonant");
   }
-}
- */
+} */

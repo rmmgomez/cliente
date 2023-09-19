@@ -1,4 +1,4 @@
-/* let a = [1,2,3,4];
+let a = [1,2,3,4];
 console.log(a.toString());
 a.push(5,6,7);
 console.log(a.toString());
@@ -9,9 +9,9 @@ console.log(`He borrado '${borrado}' -> ${a}`);
 borrado = a.pop(); // Borra último
 console.log(`He borrado '${borrado}' -> ${a}`);
 
-console.log(a.join(' => ')); // 0 => 1 => 2 => 3 => 4 => 5 => 6 */
+console.log(a.join(' => ')); // 0 => 1 => 2 => 3 => 4 => 5 => 6
 
-console.log("--------- CONCAT ----------");
+/* console.log("--------- CONCAT ----------");
 let nums1 = [10, 20, 30];
 let nums2 = [40, 50 ,60];
 let nums3 = [70, 80];
@@ -19,7 +19,7 @@ let nums4 = nums1.concat(nums2, nums3, 90);
 console.log(nums4); // [10, 20, 30, 40, 50, 60, 70, 80, 90]
 
 console.log("--------- SLICE ---------- No modifica array");
-let nums5 = nums4.slice(3, 7); // De la pos 3 incl a la 7 NO inclu
+let nums5 = nums4.slice(3, 7); // De la pos 3 incl a la 7 NO inclu */
 /* console.log(nums5); // 40, 50, 60, 70 */
 
 /* console.log("--------- SPLICE ----------Modifica array");

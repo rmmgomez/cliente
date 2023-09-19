@@ -1,5 +1,5 @@
 'use strict';
-
+/* 
 function sayHello(name) {
     console.log("Hello " + name);
 }
@@ -8,8 +8,8 @@ sayHello("Peter"); // Hello Peter
 sayHello(); // Hello undefined
 sayHello("Alex", "John", "Lisa"); // Hello Alex
 console.log(typeof sayHello); // function
-
-let sayHello2 = function(name) {
+ */
+/* let sayHello2 = function(name) {
     console.log(`Hello ${name}`);
 }
 
@@ -25,7 +25,7 @@ let total = totalPrice(5.95, 6); // Returns 35.7
 console.log(total); // Prints 35.7
 
 let sum = (n1, n2) => n1 + n2; 
-console.log(sum(4, 7)); // 11
+console.log(sum(4, 7)); // 11 */
 
 function stringOp(str, fn) {
     console.log(`${str} -> ${fn(str)}`);

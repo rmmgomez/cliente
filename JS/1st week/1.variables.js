@@ -48,11 +48,11 @@ console.log("suma Hola Pepe= " + res);
 res = suma(12, 24);
 console.log("Suma 12 24 = " + res); */
 
-const a = []; // No puedes modificar la referencia del array (el puntero)
+/* const a = []; // No puedes modificar la referencia del array (el puntero)
 a[0] = 23;
 a[1] = 24;
 a[0] = 65;
-console.log(a); // [65, 24]
+console.log(a); // [65, 24] */
 
 /* function suma2(n1,n2) {
     return n1 + n2;

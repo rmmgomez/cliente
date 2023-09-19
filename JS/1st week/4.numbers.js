@@ -8,8 +8,8 @@ console.log(priceTax.toFixed(2) + "€");
 console.log(Number.MAX_VALUE);
 console.log(Number.MAX_VALUE*Number.MAX_VALUE); // Infinity
 console.log(Number.POSITIVE_INFINITY); // Infinity
-console.log(Number.NEGATIVE_INFINITY); // -Infinity
- */
+console.log(Number.NEGATIVE_INFINITY); // -Infinity */
+
 /* function showAge(age) {
     age = +age; // Transforms the parameter to number
     if(Number.isNaN(age)) {
@@ -38,7 +38,7 @@ console.log(a + +b); // 7
 console.log(2**8); // 256 (2⁸)
 console.log(Math.pow(2, 8)); // 256  */
 
-let n1 = "24";
+/* let n1 = "24";
 let n2 = 35;
 
 console.log(n1 * n2); // 840
@@ -52,4 +52,4 @@ console.log(value + " - " + typeof value); // Prints undefined
 value = null;
 console.log(value + " - " + typeof value); // Prints object
 console.log(null == undefined); // true
-console.log(null === undefined); // false
+console.log(null === undefined); // false */

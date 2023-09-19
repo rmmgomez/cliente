@@ -11,10 +11,10 @@ map.set("24362462H", "Juan");
 console.log(map);
 console.log(map.has("35463634Y")); // true
 console.log(map.get("35463634Y")); // Marta
-// map.delete("35463634Y");
-// console.log(map);
+map.delete("35463634Y");
+console.log(map); */
 
-console.log("------FOR..OF-----");
+/* console.log("------FOR..OF-----");
 for(let [dni, name] of map) {
     console.log(`${dni} - ${name}`);
 }
@@ -25,9 +25,10 @@ for(let dni of map.keys()) {
 }
 
 console.log("------.forEach-----");
-map.forEach((name, dni) => console.log(`${dni} - ${name}`));
+map.forEach((name, dni) => console.log(`${dni} - ${name}`)); */
 
-let set = new Set();
+
+/* let set = new Set();
 set.add("tree");
 set.add("car");
 set.add("horse");
@@ -42,5 +43,6 @@ set.forEach(v => console.log(v)); */
 // Delete repeated values from an array
 let a = [1,2,3,4,5,2,3,1,4,3,2];
 let set2 = new Set(a);
+set2.forEach(v => console.log(v));
 a = new Array(set2);
 console.log(a);

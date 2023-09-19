@@ -19,7 +19,7 @@ console.log(p2.toString()); // John (77) */
 
 //----------------------------------
 
-/* let mary = new Person("Mary", 25);
+let mary = new Person("Mary", 25);
 let joe = new Person("Joe", 16);
 let leonard = new Person("Leonard", 55);
 
@@ -32,5 +32,5 @@ console.log(people.indexOf(p)); // -1
 
 console.log(people.findIndex(p => p.age === 16 && p.name === "Joe")); // 1
 console.log(people.findIndex(p => p.age < 18)); // 1
-console.log(people.find(p => p.age < 18).toString()); // 1 */
+console.log(people.find(p => p.age < 18).toString()); // 1
 

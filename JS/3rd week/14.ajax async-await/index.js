@@ -1,4 +1,3 @@
-import { SERVER } from "./constants.js";
 import { ProductService } from "./product-service.class.js";
 
 const tbody = document.querySelector("#table tbody");

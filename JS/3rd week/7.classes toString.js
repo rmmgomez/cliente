@@ -16,8 +16,7 @@ class Person {
 
     valueOf() {
         return this.age; // Los objetos de la clase persona se compararán por su edad
-    }
-        
+    }     
 }
 
 let p = new Person("Alice", 35);

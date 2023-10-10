@@ -2,7 +2,7 @@ export class Http {
   async ajax(method, url, headers = {}, body = null) {
     const resp = await fetch(url, { method, headers, body });
     
-    if (!resp.ok) throw new Error(resp.statusText);
+    if (!resp.ok) throw new Error(resp.statusText);/* dev codigo de error del servidor */
 
     if (resp.status != 204) {
       return resp.json(); // promise

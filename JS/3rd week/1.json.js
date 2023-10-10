@@ -11,7 +11,7 @@ let person2 = {
     name: "Peter",
     age: 34,
     phones: ["645745345", "954693454"],
-    addresses: [
+    addresses: [ // Dirección es un array de objetos json
         {street: "Nothing Av.", number: 23},
         {street: "Danger Street", number: 13},
     ],

@@ -2,7 +2,7 @@
 
 class Person {
     #name; // Atributos privados, creamos getter y setter estilo java
-    #age;
+    #age; // Siempre declarados fuera del constructor
 
     constructor(name = "Nobody", age = 0) {
         this.#name = name;

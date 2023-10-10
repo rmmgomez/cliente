@@ -4,7 +4,7 @@ export class Http {
       if (!resp.ok) throw new Error(resp.statusText);
 
       if (resp.status != 204) {
-        return resp.json(); // promise
+        return resp.json(); // deserializamos la respuesta con este metodo que a su vez nos devuelve otra promesa
       } else {
         return null;
       }

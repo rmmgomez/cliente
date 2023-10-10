@@ -1,12 +1,13 @@
 "use strict";
 
 class Person {
+    
     constructor(name = "Nobody", age = 0) {
         this.name = name; // No necesito declarar los atributos de la clase fuera del constructor, basta con asignarlos
         this.age = age;
     }
 
-    sayHello() {
+    sayHello(name) {
         console.log(`Hello! I'm ${this.name} (${this.age} years old)`); // Usamos el this!!
     }
 }

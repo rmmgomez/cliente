@@ -1,4 +1,4 @@
-// Creamos la variable usuario con el valor "Pepe"
+/* // Creamos la variable usuario con el valor "Pepe"
 localStorage.setItem("usuario", "Pepe");
 // También se puede crear así:
 localStorage.usuario = "Pepe";
@@ -12,7 +12,7 @@ console.log("usando el operador . --> " + localStorage.usuario); // Imprime "Pep
 localStorage.removeItem("usuario");
 
 // Borramos todos los datos almacenados
-localStorage.clear();
+localStorage.clear(); */
 
 getLocation().then((coords) => {
     const p = document.getElementById("coordenadas");

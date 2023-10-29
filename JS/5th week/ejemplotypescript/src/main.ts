@@ -2,36 +2,36 @@
 
 /* console.log("---------- Tipado implicito ----------");
 let nombre = "Rosa";
-// nombre = 33;
+/* nombre = 33; */
 
-let a; // Tipo any
-a = 34;
-a ="s"; //Tipado dinamico como JS
-console.log("Tipo any: " + a); 
+// let a; // Tipo any
+// a = 34;
+// a ="s"; //Tipado dinamico como JS
+// console.log("Tipo any: " + a); 
 
-const arr = []; // Array de any...
-arr[0] = 2;
-arr[1] = "sda";
-console.log("Array de any: " + arr); */
+// const arr = []; // Array de any...
+// arr[0] = 2;
+// arr[1] = "sda";
+// console.log("Array de any: " + arr); */
 
 
-// Tipado explicito
-/* console.log("---------- Tipado explicito ----------");
-let num: number;
-num = 23;
-// num = "Hola";
+// // Tipado explicito
+// console.log("---------- Tipado explicito ----------");
+// let num: number;
+// num = 23;
+// /* num = "Hola"; */
 
-// Arrays
-const arrNum: number[] = []; // const arrNum2: Array<string> = [];
-arrNum[0] = 2;
-arrNum[1] = 3;
-// arrNum[2] = "3";
-// arrNum.push("sda"); 
-arrNum.push(3);
-console.log(arrNum);
+// // Arrays
+// const arrNum: number[] = []; // const arrNum2: Array<string> = [];
+// arrNum[0] = 2;
+// arrNum[1] = 3;
+// /* arrNum[2] = "3"; */
+// /* arrNum.push("sda");  */
+// arrNum.push(3);
+// console.log(arrNum);
 
-const arrNum2: Array<string> = [];
-arrNum2.push("Holi"); */
+// const arrNum2: Array<string> = [];
+// arrNum2.push("Holi");
 
 // FUNCIONES
 /* console.log("---------- Funciones ----------");
@@ -40,7 +40,7 @@ function suma(n1: number, n2: number): number{
 }
 function saluda(): void {
     console.log("Hola");
-    // return 0;
+    // return;
 }
 
 console.log(suma(3,5));
@@ -89,7 +89,7 @@ let p = new Persona("Juan", "admin"); // OK */
 // Tupla --> Array de long fija con tipo datos def en cada pos
 /* console.log("---------- Tuplas ----------");
 type TuplaPersona = [string, number];
-const tp: TuplaPersona = ["Pepe", 23]; // OK */
+const tp: TuplaPersona = ["Pepe", 23];  */// OK */
 
 // Objetos
 
@@ -163,7 +163,7 @@ console.log(personas2); */
 }
 
 const p = new Persona("Juan", 42, "admin");
-console.log(p.rol); // Property 'rol' is private and only accessible within class 'Persona'
+//console.log(p.rol); // Property 'rol' is private and only accessible within class 'Persona'
 Object.entries(p).forEach(([k,v]) => console.log(`${k} => ${v}`)); // No marca error
 
     // nombre => Juan
@@ -185,7 +185,7 @@ Object.entries(p).forEach(([k,v]) => console.log(`${k} => ${v}`)); // No marca e
 
 const p = new Persona("Juan", 42, "admin");
 //console.log(p.#rol); // roperty '#rol' is not accessible outside class 'Persona' because it has a private identifier
-Object.entries(p).forEach(([k,v]) => console.log(`${k} => ${v}`)); // No va a listar el atributo #rol
+Object.entries(p).forEach(([atributo,valor]) => console.log(`${atributo} => ${valor}`)); // No va a listar el atributo #rol
 
     // nombre => Juan
     // edad => 42
@@ -197,10 +197,11 @@ Object.entries(p).forEach(([k,v]) => console.log(`${k} => ${v}`)); // No va a li
 }
 
 const p = new Persona("Juan", 34);
-console.log(`${p.nombre} - ${p.edad}`); // Juan - 34 */
-
+console.log(`${p.nombre} - ${p.edad}`); // Juan - 34
+ */
 
 /* interface Saluda {
+    nombre: string;
     saluda: () => void
 }
 
@@ -271,42 +272,42 @@ console.log((p as Usuario).email); // También es válido */
 
 
 // Operador opcionalidad ?
-/* console.log("Op. opcionalidad");
-function saluda(nombre?: string) {
-    // El tipo de 'nombre' será: string | undefined
-    if(!nombre) {
-        console.log("No sé quién eres");
-    } else {
-        console.log(`Hola ${nombre}`);
-    }
-}
+// console.log("Op. opcionalidad");
+// function saluda(nombre?: string) {
+//     // El tipo de 'nombre' será: string | undefined
+//     if(!nombre) {
+//         console.log("No sé quién eres");
+//     } else {
+//         console.log(`Hola ${nombre}`);
+//     }
+// }
 
-saluda(); // OK
-saluda("Pepe"); // OK 
+// saluda(); // OK
+// saluda("Pepe"); // OK 
 
-interface Persona {
-    nombre: string;
-    edad: number;
-    numSocio?: number; // Realmente será number | undefined
-}
+// interface Persona {
+//     nombre: string;
+//     edad: number;
+//     numSocio?: number; // Realmente será number | undefined
+// }
 
-const p: Persona = {
-    nombre: "Ana",
-    edad: 40
-}; // OK
-console.log(p.numSocio); // undefined 
+// const p: Persona = {
+//     nombre: "Ana",
+//     edad: 40
+// }; // OK
+// console.log(p.numSocio); // undefined 
 
-const a = ["perro", "casa", "árbol", "mesa", "coche"];
-const palabra = a.find((p) => p.startsWith("z")); // Devuelve string | undefined
+// const a = ["perro", "casa", "árbol", "mesa", "coche"];
+// const palabra = a.find((p) => p.startsWith("z")); // Devuelve string | undefined
 
-console.log(palabra.toLocaleUpperCase()); // ERROR: 'palabra' is possibly 'undefined'
-console.log(palabra?.toLocaleUpperCase()); // Si palabra es undefined, devuelve undefined sin acceder al método
- */
+// console.log(palabra.toLocaleUpperCase()); // ERROR: 'palabra' is possibly 'undefined'
+// console.log(palabra?.toLocaleUpperCase()); // Si palabra es undefined, devuelve undefined sin acceder al método */
+
 
 
 // OPERADOR NO_NULL    !
-/* 
-const a = ["perro", "casa", "árbol", "mesa", "coche"];
+
+/* const a = ["perro", "casa", "árbol", "mesa", "coche"];
 const palabra = a.find((p) => p.startsWith("c")); // Devuelve string | undefined
 
 console.log(palabra.toLocaleUpperCase()); // ERROR: 'palabra' is possibly 'undefined'
@@ -331,5 +332,5 @@ class Persona {
 }
 
 const p = Persona.crear("Juan", 23);
-console.log(p); // Juan - 23
- */
+console.log(p); // Juan - 23 */
+

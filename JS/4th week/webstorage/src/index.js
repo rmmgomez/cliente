@@ -61,7 +61,7 @@ const API_KEY ="AmCsCCqcPEgBpcQEt-j_fZpvSQ_GhKqyvzOk1UiIb3vd1l1Usz51mj-K1uB9hvxl
 showMap(); */
 
 
-/*  */
+/* MApa dinamico */
 function loadBingAPI(apiKey) {
     const script = document.createElement("script");
     script.src = `https://www.bing.com/api/maps/mapcontrol?key=${apiKey}&callback=showMap`;

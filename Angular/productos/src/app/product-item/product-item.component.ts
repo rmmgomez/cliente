@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../interfaces/product';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
@@ -11,13 +11,9 @@ import { StarRatingComponent } from '../star-rating/star-rating.component';
   styleUrl: './product-item.component.css',
 })
 export class ProductItemComponent {
-  product: Product = {
-    id: 1,
-    description: 'SSD hard drive',
-    available: '2016-10-03',
-    price: 75,
-    imageUrl: 'assets/ssd.jpg',
-    rating: 5,
-  };
-  showImage = true;
+  @Input({ required: true }) product!: Product; // required: true -> Obligatorio
+  @Input() showImage: boolean = true; // Valor por defecto (opcional)
+  changeRating(rating: number) {
+    this.product.rating = rating;
+  }
 }

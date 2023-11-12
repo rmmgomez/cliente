@@ -1,22 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../interfaces/product';
 import { FormsModule } from '@angular/forms';
+import { ProductFilterPipe } from '../pipes/product-filter.pipe';
+import { ProductItemComponent } from '../product-item/product-item.component';
 
 @Component({
   selector: 'products-page',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ProductFilterPipe, ProductItemComponent],
   templateUrl: './products-page.component.html',
   styleUrl: './products-page.component.css',
 })
-export class ProductsPageComponent {
+export class ProductsPageComponent implements OnInit {
   title = 'Mi lista de productos';
   headers = {
     image: 'Imagen',
     description: 'Producto',
     price: 'Precio',
     available: 'Disponible',
+    rating: 'Puntuación',
   };
   products: Product[] = [
     {
@@ -39,9 +42,12 @@ export class ProductsPageComponent {
   showImage = true;
   newProduct!: Product;
   fileName = '';
-
+  search = '';
   constructor() {
     this.resetProduct();
+  }
+  ngOnInit(): void {
+    console.log('Método onInit');
   }
 
   toggleImage() {
@@ -59,7 +65,7 @@ export class ProductsPageComponent {
   }
 
   addProduct() {
-    this.products.push(this.newProduct);
+    this.products = [...this.products, this.newProduct];
     this.fileName = '';
     this.resetProduct();
   }

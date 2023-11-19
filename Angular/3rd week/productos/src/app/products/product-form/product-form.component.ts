@@ -1,7 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../interfaces/product';
+import { ProductsService } from '../services/products.service';
+import { Router } from '@angular/router';
+import { CanComponentDeactivate } from '../interfaces/can-component-deactivate';
 
 @Component({
   selector: 'product-form',
@@ -10,8 +13,14 @@ import { Product } from '../interfaces/product';
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css'
 })
-export class ProductFormComponent {
+export class ProductFormComponent implements CanComponentDeactivate{
   @Output() add = new EventEmitter<Product>();
+  #productsService = inject(ProductsService);
+  #router = inject(Router);
+  saved: boolean = false;
+  canDeactivate() {
+    return this.saved || confirm('Do you want to leave this page?. Changes can be lost');
+  }
 
   newProduct!: Product;
   fileName!: string;
@@ -31,8 +40,10 @@ export class ProductFormComponent {
   }
 
   addProduct() {
-    this.add.emit(this.newProduct); // Enviamos el producto al padre
-    this.resetProduct();
+    this.#productsService.addProduct(this.newProduct).subscribe((p) => {
+      this.saved = true;
+      this.#router.navigate(['/products']);
+    });
   }
 
   private resetProduct() {

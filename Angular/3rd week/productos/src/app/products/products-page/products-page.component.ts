@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../interfaces/product';
 import { FormsModule } from '@angular/forms';
 import { ProductFilterPipe } from '../pipes/product-filter.pipe';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { ProductFormComponent } from '../product-form/product-form.component';
+import { ProductsService } from '../services/products.service';
+import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'products-page',
@@ -22,29 +25,21 @@ export class ProductsPageComponent implements OnInit {
     available: 'Disponible',
     rating: 'Puntuación',
   };
-  products: Product[] = [
-    {
-      id: 1,
-      description: 'SSD hard drive',
-      available: '2016-10-03',
-      price: 75,
-      imageUrl: 'assets/ssd.jpg',
-      rating: 5,
-    },
-    {
-      id: 2,
-      description: 'LGA1151 Motherboard',
-      available: '2016-09-15',
-      price: 96.95,
-      imageUrl: 'assets/motherboard.jpg',
-      rating: 4,
-    },
-  ];
+  products: Product[] = [];
   showImage = true;
   newProduct!: Product;
   search = '';
+  #titleService = inject(Title);
+
+  #productsService = inject(ProductsService);
+  products$!: Observable<Product[]>;
+  
   ngOnInit(): void {
-    console.log('Método onInit');
+    this.#titleService.setTitle("Productos | Angular Products");
+    this.#productsService.getProducts().subscribe({
+      next: (products) => (this.products = products),
+      error: (error) => console.log(error),
+    });
   }
 
   toggleImage() {

@@ -9,15 +9,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './star-rating.component.css',
 })
 export class StarRatingComponent {
-  @Input() rating: number = 0;
   @Output() ratingChanged = new EventEmitter<number>();
-
   auxRating = 0;
-  ngOnInit(): void {
-    this.restoreRating();
+  @Input()
+  set rating(rating: number) {
+    this.#rating = rating;
+    this.auxRating = rating;
   }
+
+  #rating = 0;
+
+
   restoreRating() {
-    this.auxRating = this.rating;
+    this.auxRating = this.#rating;
   }
   changeRating(rating: number) {
     this.ratingChanged.emit(rating);

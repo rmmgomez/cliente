@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { leavePageGuard } from "../guards/leave-page.guard";
-import { ProductDetailComponent } from "./product-detail/product-detail.component";
 import { productResolver } from "./resolvers/product.resolver";
+import { numericIdGuard } from "../guards/numeric-id.guard";
 
 export const productsRoutes: Routes = [
     {
@@ -23,7 +23,7 @@ export const productsRoutes: Routes = [
     },
     {
       path: ':id',
-      /* canActivate: [numericIdGuard], */
+      canActivate: [numericIdGuard],
       resolve: {
         product: productResolver,
       },

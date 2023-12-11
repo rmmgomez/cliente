@@ -6,6 +6,9 @@ import { ProductsService } from '../services/products.service';
 import { Router } from '@angular/router';
 import { CanComponentDeactivate } from '../interfaces/can-component-deactivate';
 import { MinDateDirective } from '../../validators/min-date.directive';
+import { ConfirmModalComponent } from '../../modals/confirm-modal/confirm-modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'product-form',
@@ -15,17 +18,24 @@ import { MinDateDirective } from '../../validators/min-date.directive';
   styleUrl: './product-form.component.css'
 })
 export class ProductFormComponent implements CanComponentDeactivate{
-  @ViewChild('addForm') addForm!: NgForm;
+
   @Output() add = new EventEmitter<Product>();
   #productsService = inject(ProductsService);
   #router = inject(Router);
   saved: boolean = false;
-  canDeactivate() {
-    return this.saved || confirm('Do you want to leave this page?. Changes can be lost');
-  }
-
   newProduct!: Product;
   fileName!: string;
+  #modalService = inject(NgbModal);
+  @ViewChild('addForm') addForm!: NgForm;
+  canDeactivate() {
+    if (this.saved || this.addForm.pristine) {
+      return true;
+    }
+    const modalRef = this.#modalService.open(ConfirmModalComponent);
+    modalRef.componentInstance.title = 'Changes not saved';
+    modalRef.componentInstance.body = 'Do you want to leave the page?';
+    return modalRef.result.catch(() => false);
+  }
 
   constructor() {
     this.resetProduct();
